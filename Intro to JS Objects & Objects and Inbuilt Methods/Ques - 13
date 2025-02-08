@@ -1,0 +1,35 @@
+let sentenceBuilder = {
+    subject: "I",
+    verb: "am",
+    object: "coding"
+};
+
+function buildSentence(obj) {
+    if (obj.subject && obj.verb && obj.object) {
+        return `${obj.subject} ${obj.verb} ${obj.object}`;
+    } else {
+        return "Incomplete sentence";
+    }
+}
+
+function updateProperty(obj, property, value) {
+    if (obj.hasOwnProperty(property)) {
+        obj[property] = value;
+        return "Property updated successfully";
+    } else {
+        return "Invalid property";
+    }
+}
+
+console.log(buildSentence(sentenceBuilder));
+
+console.log(updateProperty(sentenceBuilder, "verb", "am learning"));
+console.log(buildSentence(sentenceBuilder));
+
+console.log(updateProperty(sentenceBuilder, "subject", "The cat"));
+console.log(buildSentence(sentenceBuilder));
+
+console.log(updateProperty(sentenceBuilder, "mood", "happy"));
+
+console.log(updateProperty(sentenceBuilder, "verb", ""));
+console.log(buildSentence(sentenceBuilder));
