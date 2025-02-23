@@ -1,0 +1,57 @@
+
+function fetchUserData(url) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const users = [
+                { id: 1, name: "Alice", email: "alice@example.com", age: 25 },
+                { id: 2, name: "Bob", email: "bob@example.com", age: 30 },
+                { id: 3, name: "Charlie", email: "charlie@example.com", age: 22 },
+                { id: 4, name: "David", email: "david@example.com", age: 18 }
+            ];
+            resolve(users);
+        }, 1000); // Simulating 1-second network delay
+    });
+}
+
+function processUsers(users, minAge) {
+    if (!Array.isArray(users) || typeof minAge !== "number" || minAge < 0) {
+        return []; // Handle invalid input
+    }
+    return users
+        .filter(user => user.age >= minAge)
+        .map(user => ({ name: user.name, email: user.email })); // Only return name & email
+}
+
+function createUserManager() {
+    let users = [];
+
+    return {
+        addUser(user) {
+            users = [...users, user]; // Immutable add
+        },
+        getUsers() {
+            return users.map(user => ({ name: user.name })); // Hide emails
+        },
+        findUserByName(name) {
+            const user = users.find(user => user.name.toLowerCase() === name.toLowerCase());
+            return user ? { name: user.name, email: user.email } : null; // Return uniform format
+        }
+    };
+}
+
+fetchUserData("https://example.com/users")
+    .then(users => {
+        console.log("Original Users:", users);
+        
+        const processedUsers = processUsers(users, 21);
+        console.log("Processed Users:", processedUsers);
+
+        // Use createUserManager closure
+        const userManager = createUserManager();
+        processedUsers.forEach(user => userManager.addUser(user));
+
+        console.log("Users in Manager (Hidden Email):", userManager.getUsers());
+        console.log("Find User by Name (Case Insensitive):", userManager.findUserByName("alice"));
+        console.log("Find Non-existent User:", userManager.findUserByName("Eve"));
+    })
+    .catch(error => console.error("Error fetching users:", error));
