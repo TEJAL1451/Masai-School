@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Navigation Bar</title>
+    <style>
+        /* Reset and box-sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #222;
+            padding: 15px;
+        }
+
+        .nav-section {
+            list-style: none;
+        }
+
+        /* Descendant combinator: Style links within each section */
+        .section-1 a {
+            color: #ff5733; /* Reddish */
+        }
+
+        .section-2 a {
+            color: #33c4ff; /* Blue */
+        }
+
+        .section-3 a {
+            color: #33ff77; /* Green */
+        }
+
+        /* Child combinator: Style only direct child links */
+        .nav-section > li > a {
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: inline-block;
+        }
+
+        /* Hover effect */
+        .nav-section a:hover {
+            color: yellow;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Active (clicked) effect */
+        .nav-section a:active {
+            color: white;
+            background-color: black;
+        }
+
+        /* Attribute selector: Style links that start with https */
+        .nav-section a[href^="https"] {
+            color: gold !important; /* High specificity with !important */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-section section-1">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="https://external.com">External Link</a></li>
+        </ul>
+        <ul class="nav-section section-2">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="https://example.com">More Info</a></li>
+        </ul>
+        <ul class="nav-section section-3">
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="https://help.com">Help</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
