@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        section {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 200px;
+            height: 150px;
+            border-radius: 5px;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <section>
+            <img src="image1.jpg" alt="Beautiful Mountain Landscape">
+            <a href="https://example.com/mountains" target="_blank">Learn more about mountains</a>
+        </section>
+        <section>
+            <img src="image2.jpg" alt="Serene Beach View">
+            <a href="https://example.com/beaches" target="_blank">Explore famous beaches</a>
+        </section>
+        <section>
+            <img src="image3.jpg" alt="Modern City Skyline">
+            <a href="https://example.com/cities" target="_blank">Discover top cities</a>
+        </section>
+    </div>
+</body>
+</html>
