@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive List with Combinators</title>
+    <style>
+        /* Style the first list item in bold */
+        ol li:first-child {
+            font-weight: bold;
+        }
+
+        /* Adjacent sibling combinator: Style the item directly after the first item */
+        ol li:first-child + li {
+            background-color: lightgray;
+        }
+
+        /* General sibling combinator: Style all items after the third item in italics */
+        ol li:nth-child(3) ~ li {
+            font-style: italic;
+        }
+
+        /* Hover effect: Change text color when hovered */
+        ol li:hover {
+            color: darkblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Interactive Ordered List</h2>
+    <ol>
+        <li>Item 1 (Bold)</li>
+        <li>Item 2 (Gray background)</li>
+        <li>Item 3</li>
+        <li>Item 4 (Italic)</li>
+        <li>Item 5 (Italic)</li>
+    </ol>
+</body>
+</html>
