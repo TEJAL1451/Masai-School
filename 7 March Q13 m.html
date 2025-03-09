@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling with ID and Universal Selector</title>
+    <style>
+        /* Universal selector to remove default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling for h1 with id="main-title" */
+        #main-title {
+            font-size: 32px;
+            color: darkblue;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for h2 with id="subtitle" */
+        #subtitle {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px 0;
+        }
+
+        /* Styling for paragraphs */
+        p {
+            padding: 10px;
+            border: 1px solid lightgray;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Welcome to My Styled Page</h1>
+    <h2 id="subtitle">A Demonstration of ID and Universal Selectors</h2>
+    <p>This is the first paragraph, demonstrating padding and border styling.</p>
+    <p>Another paragraph with consistent styling using the universal and ID selectors.</p>
+    <p>Using CSS to style elements makes web pages visually appealing.</p>
+</body>
+</html>
