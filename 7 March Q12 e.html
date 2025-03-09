@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity Experiment</title>
+    <style>
+        /* Element Selector: Lowest specificity (0,0,1) */
+        div {
+            color: green;
+        }
+
+        /* Class Selector: Higher specificity than element (0,1,0) */
+        .highlight {
+            color: blue;
+        }
+
+        /* ID Selector: Highest specificity (1,0,0) */
+        #special {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="highlight" id="special">
+        This text will be colored based on CSS specificity.
+    </div>
+</body>
+</html>
