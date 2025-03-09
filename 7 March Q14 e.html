@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset and box-sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container styles */
+        .container {
+            display: flex; /* Use flexbox for proper alignment */
+            justify-content: center; /* Center boxes */
+            gap: 10px; /* Add space between boxes */
+            padding: 20px;
+            flex-wrap: wrap; /* Ensure responsiveness */
+        }
+
+        /* Box styles */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Remove absolute positioning */
+        }
+
+        /* Fixed text positioning */
+        .text {
+            position: fixed;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8); /* Add slight background for visibility */
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .container {
+                flex-direction: column; /* Stack boxes vertically on small screens */
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Debugging Task</h1>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+    <p class="text">Fix my position!</p>
+</body>
+</html>
