@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Flex-Direction</title>
+    <style>
+        /* Flexbox Container */
+        .container {
+            display: flex; 
+            flex-direction: row; /* Items arranged in a row (default) */
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Aligns items in the center vertically */
+            height: 100vh; /* Full viewport height */
+            background-color: lightgray;
+            gap: 10px; /* Adds spacing between items */
+        }
+
+        /* Flex Items */
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: steelblue;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        /* Apply Column Layout */
+        .container.column {
+            flex-direction: column; /* Changes the layout to stack items vertically */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flexbox Container -->
+    <div class="container" id="flexContainer">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <!-- Button to Toggle Column Layout -->
+    <button onclick="toggleDirection()">Toggle Column Layout</button>
+
+    <script>
+        function toggleDirection() {
+            document.getElementById('flexContainer').classList.toggle('column');
+        }
+    </script>
+
+</body>
+</html>
