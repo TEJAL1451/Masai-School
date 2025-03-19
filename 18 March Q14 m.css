@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures width and height include padding and borders */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px; /* Adds spacing around the content */
+}
+
+.container {
+    display: flex; /* Aligns items in a row */
+    gap: 10px; /* Adds spacing between boxes */
+    justify-content: center; /* Centers boxes horizontally */
+    padding: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+    border: 1px solid black;
+    text-align: center;
+    display: flex; /* Centers text inside the box */
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    position: absolute; /* Positions text relative to the body */
+    left: 50%; /* Moves text to the center horizontally */
+    top: 20px; /* Adjusts vertical positioning */
+    transform: translateX(-50%); /* Ensures exact center alignment */
+}
