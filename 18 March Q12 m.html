@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering CSS Display Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .block-element {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid blue;
+            background-color: lightblue;
+        }
+        .inline-element {
+            display: inline;
+            padding: 5px;
+            background-color: yellow;
+            border: 1px solid orange;
+        }
+        .inline-block-element {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+            border: 2px solid green;
+            background-color: lightgreen;
+            margin: 5px;
+        }
+        .hidden-element {
+            display: none;
+            padding: 10px;
+            border: 2px solid red;
+            background-color: pink;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Display Properties Demonstration</h2>
+    <p>This page demonstrates block, inline, inline-block, and none display properties.</p>
+    
+    <div class="block-element">Block Element (Takes full width)</div>
+    <span class="inline-element">Inline Element (Fits within text flow)</span>
+    <div class="inline-block-element">Inline-Block Element (Has dimensions, sits inline)</div>
+    <div class="hidden-element" id="hidden">Hidden Element (Toggle me!)</div>
+    
+    <button onclick="toggleHidden()">Toggle Hidden Element</button>
+    
+    <script>
+        function toggleHidden() {
+            var hiddenElement = document.getElementById("hidden");
+            if (hiddenElement.style.display === "none") {
+                hiddenElement.style.display = "block";
+            } else {
+                hiddenElement.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
