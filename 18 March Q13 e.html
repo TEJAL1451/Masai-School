@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        /* Flexbox container */
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping for responsiveness */
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* Title section */
+        .title {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Section block */
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 220px;
+        }
+
+        /* Product text */
+        .section h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .section p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Title -->
+        <div class="title">Revamp your home in style</div>
+
+        <!-- Product Sections -->
+        <div class="section">
+            <h3>Starting ₹149</h3>
+            <p>Headphones</p>
+        </div>
+
+        <div class="section">
+            <h3>boAt</h3>
+            <p>Starting ₹249</p>
+        </div>
+
+        <div class="section">
+            <h3>BOULT</h3>
+            <p>Starting ₹349</p>
+        </div>
+
+        <div class="section">
+            <h3>Cushion covers, bedsheets & more</h3>
+        </div>
+
+        <div class="section">
+            <h3>Figurines, vases & more</h3>
+        </div>
+
+        <div class="section">
+            <h3>NOISE</h3>
+            <p>Starting ₹649</p>
+        </div>
+
+        <div class="section">
+            <h3>ZEBRONICS</h3>
+            <p>Starting ₹149</p>
+        </div>
+
+        <div class="section">
+            <h3>Home Storage</h3>
+        </div>
+
+        <div class="section">
+            <h3>Lighting Solutions</h3>
+        </div>
+    </div>
+
+</body>
+</html>
