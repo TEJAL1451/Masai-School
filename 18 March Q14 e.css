@@ -1,0 +1,37 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Ensures logo on left, links on right */
+    align-items: center; /* Aligns items vertically */
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  /* Logo */
+  .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Navigation Links */
+  .links {
+    display: flex; /* Ensures links stay in a row */
+    gap: 20px; /* Adds even spacing between links */
+  }
+  
+  /* Navigation Links Styling */
+  .links a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  /* Hover Effect */
+  .links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
