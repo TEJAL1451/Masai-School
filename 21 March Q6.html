@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Investors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .investors-section {
+            padding: 50px 20px;
+        }
+
+        .investors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .investor-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .investor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .investor-card h2 {
+            font-size: 1.2em;
+            margin: 10px 0 5px;
+        }
+
+        .investor-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        .investor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <section class="investors-section">
+        <h1>Our Investors</h1>
+        <p>When outcomes drive you, the industry stands with you.</p>
+        <div class="investors-grid">
+            <div class="investor-card">
+                <img src="https://via.placeholder.com/100" alt="Vijay Shekhar Sharma">
+                <h2>Vijay Shekhar Sharma</h2>
+                <p>Founder & CEO, Paytm</p>
+            </div>
+            <div class="investor-card">
+                <img src="https://via.placeholder.com/100" alt="Kunal Shah">
+                <h2>Kunal Shah</h2>
+                <p>Founder, CRED</p>
+            </div>
+            <div class="investor-card">
+                <img src="https://via.placeholder.com/100" alt="Nitin Kamath">
+                <h2>Nithin Kamath</h2>
+                <p>Founder & CEO, Zerodha</p>
+            </div>
+            <div class="investor-card">
+                <img src="https://via.placeholder.com/100" alt="Ratan Tata">
+                <h2>Ratan Tata</h2>
+                <p>Chairman Emeritus, Tata Sons</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
