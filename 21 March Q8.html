@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout with Hover Effect</title>
+    <style>
+        /* Grid container */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            grid-template-rows: repeat(2, 150px); /* 2 rows */
+            gap: 15px;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Grid items */
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Button Styling */
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect */
+        .btn:hover {
+            background-color: #ff6347; /* Changes to Tomato color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item"><button class="btn">Button 1</button></div>
+        <div class="item"><button class="btn">Button 2</button></div>
+        <div class="item"><button class="btn">Button 3</button></div>
+        <div class="item"><button class="btn">Button 4</button></div>
+        <div class="item"><button class="btn">Button 5</button></div>
+        <div class="item"><button class="btn">Button 6</button></div>
+    </div>
+
+</body>
+</html>
