@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            font-size: 20px;
+        }
+        .item {
+            background-color: lightblue;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .item-4 { grid-column: span 4; }
+        .item-6 { grid-column: span 6; }
+        .item-1 { grid-column: span 1; }
+        .item-5 { grid-column: span 5; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item item-4">4</div>
+        <div class="item item-6">6</div>
+        <div class="item item-1">1</div>
+        <div class="item item-5">5</div>
+    </div>
+
+</body>
+</html>
