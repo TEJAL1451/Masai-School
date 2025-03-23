@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Grid Debugging</title>
+  <style>
+      /* Base styles for mobile-first design */
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          text-align: center;
+      }
+
+      h1 {
+          margin-bottom: 20px;
+      }
+
+      .gallery {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+          padding: 10px;
+      }
+
+      .item {
+          background-color: lightblue;
+          padding: 20px;
+          border: 1px solid #ddd;
+      }
+
+      /* Medium screens (768px to 1024px) */
+      @media (min-width: 768px) and (max-width: 1023px) {
+          .gallery {
+              grid-template-columns: repeat(2, 1fr); /* Fixed: Changed from 3 to 2 columns */
+              gap: 20px; /* Fixed: Increased gap to prevent overlap */
+          }
+      }
+
+      /* Large screens (above 1024px) */
+      @media (min-width: 1024px) {
+          .gallery {
+              grid-template-columns: repeat(4, 1fr); /* Fixed: Changed from 2 to 4 columns */
+          }
+      }
+  </style>
+</head>
+<body>
+  <h1>Responsive Gallery</h1>
+  <div class="gallery">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+</body>
+</html>
