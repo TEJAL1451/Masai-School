@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DOM Manipulation</title>
+    <style>
+        .container {
+            padding: 20px;
+            border: 1px solid #000;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive DOM Manipulation</h1>
+    
+    <label for="color-input">Enter a color:</label>
+    <input type="text" id="color-input" placeholder="e.g., red, blue, green">
+    <button id="change-bg">Change Background</button>
+    <br><br>
+    
+    <label for="text-input">Enter text:</label>
+    <input type="text" id="text-input" placeholder="Enter new text here">
+    <button id="update-text">Update Text</button>
+    
+    <div id="content-box" class="container">Initial Text</div>
+    
+    <script>
+        const colorInput = document.getElementById('color-input');
+        const textInput = document.getElementById('text-input');
+        const changeBgButton = document.getElementById('change-bg');
+        const updateTextButton = document.getElementById('update-text');
+        const contentBox = document.getElementById('content-box');
+
+        // Function to change background color
+        changeBgButton.addEventListener('click', () => {
+            const color = colorInput.value.trim();
+            contentBox.style.backgroundColor = color;
+            
+            if (!CSS.supports('color', color) || color === '') {
+                alert('Invalid color name!');
+                contentBox.style.backgroundColor = '';
+            }
+        });
+
+        // Function to update text content
+        updateTextButton.addEventListener('click', () => {
+            const newText = textInput.value.trim();
+            if (newText === '') {
+                alert('Please enter some text!');
+            } else {
+                contentBox.textContent = newText;
+            }
+        });
+    </script>
+</body>
+</html>
