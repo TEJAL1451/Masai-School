@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debugging Task</title>
+</head>
+<body>
+  <p id="message">Original Message</p>
+  <button id="textButton">Change Text</button>
+  <br><br>
+  <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+  <button id="colorButton">Change Background</button>
+
+  <script>
+    // Fixed JavaScript code
+    const para = document.querySelector('#message'); // Corrected id
+    const textButton = document.getElementById('textButton'); // Corrected method
+    textButton.addEventListener('click', () => { // Corrected method name
+      para.textContent = 'New Message'; // Corrected property
+    });
+
+    const box = document.getElementById('box');
+    const colorButton = document.getElementById('colorButton');
+    colorButton.addEventListener('click', () => {
+      box.style.backgroundColor = 'blue'; // Fixed typo in 'style'
+    });
+  </script>
+</body>
+</html>
