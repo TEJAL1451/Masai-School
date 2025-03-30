@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversal</title>
+</head>
+<body>
+    <div id="container">
+        <ul id="list">
+            <li id="item1">Item 1</li>
+            <li id="item2">Item 2</li>
+            <li id="item3">Item 3</li>
+        </ul>
+    </div>
+
+    <script>
+        const item2 = document.getElementById('item2');
+
+        item2.addEventListener('click', () => {
+            // Get the parent element (UL) and show its text content in an alert
+            alert("Parent Content: " + item2.parentNode.textContent.trim());
+
+            // Get previous and next siblings
+            const prevSibling = item2.previousElementSibling;
+            const nextSibling = item2.nextElementSibling;
+
+            // Log sibling content to console
+            if (prevSibling) console.log("Previous Sibling: ", prevSibling.textContent);
+            if (nextSibling) console.log("Next Sibling: ", nextSibling.textContent);
+        });
+    </script>
+</body>
+</html>
