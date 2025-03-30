@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+    <style>
+        .container {
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .bold-blue {
+            font-weight: bold;
+            color: blue;
+        }
+        .italic-red {
+            font-style: italic;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Original Heading</h1>
+    <div class="container">
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+    </div>
+    
+    <ul id="item-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="add-item">Add Item</button>
+    
+    <script>
+        // Select the <h1> element by its ID and change its text content
+        const heading = document.getElementById('main-heading');
+        heading.textContent = "Welcome to the DOM World!";
+
+        // Select all <p> elements and change their text color to blue
+        const paragraphs = document.getElementsByTagName('p');
+        for (let p of paragraphs) {
+            p.style.color = 'blue';
+        }
+
+        // Select the first <div> with class 'container' and change its background color
+        const container = document.querySelector('.container');
+        container.style.backgroundColor = 'yellow';
+
+        // Select the <ul> element and button
+        const itemList = document.querySelector('#item-list');
+        const addButton = document.querySelector('#add-item');
+
+        // Function to add a new item
+        addButton.addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.textContent = `New Item`;
+            
+            // Get the current number of <li> elements
+            const itemCount = itemList.getElementsByTagName('li').length;
+            
+            // Apply styles based on sequence number (odd/even)
+            if ((itemCount + 1) % 2 !== 0) {
+                newItem.classList.add('bold-blue');
+            } else {
+                newItem.classList.add('italic-red');
+            }
+            
+            // Append the new <li> to the <ul>
+            itemList.appendChild(newItem);
+        });
+    </script>
+</body>
+</html>
