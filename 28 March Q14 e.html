@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Fetch App</title>
+</head>
+<body>
+    <h1>Weather Fetch App</h1>
+    <form id="weatherForm">
+        <input type="text" id="city" placeholder="Enter city name" required />
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather"></div>
+    <script>
+        const weatherForm = document.getElementById('weatherForm');
+        const cityInput = document.getElementById('city');
+        const weatherDisplay = document.getElementById('weather');
+
+        weatherForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const city = cityInput.value.trim(); // Trim whitespace
+
+            if (!city) {
+                weatherDisplay.textContent = 'Please enter a city name!';
+                return;
+            }
+
+            fetchWeather(city);
+        });
+
+        async function fetchWeather(city) {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeather API key
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error('City not found or network error occurred.');
+                }
+
+                const data = await response.json();
+                displayWeather(data);
+            } catch (error) {
+                weatherDisplay.textContent = error.message; // Display user-friendly error message
+            }
+        }
+
+        function displayWeather(data) {
+            const { name, main, weather } = data;
+            const temperature = main.temp;
+            const description = weather[0].description;
+
+            weatherDisplay.innerHTML = `
+                <h2>Weather in ${name}</h2>
+                <p>Temperature: ${temperature}°C</p>
+                <p>Condition: ${description}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
