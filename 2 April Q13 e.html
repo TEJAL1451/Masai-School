@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Users</title>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        table { width: 50%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        form { margin-top: 20px; }
+        input, button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Users List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+        </tbody>
+    </table>
+    <p id="errorMessage" style="color: red;"></p>
+
+    <h2>Add New User</h2>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Enter name" required>
+        <input type="email" id="email" placeholder="Enter email" required>
+        <button type="submit">Add User</button>
+    </form>
+    <p id="message" style="color: green;"></p>
+
+    <div id="editFormContainer" style="display:none;">
+        <h2>Edit User</h2>
+        <form id="editForm">
+            <input type="hidden" id="editUserId">
+            <input type="text" id="editName" placeholder="Enter name" required>
+            <input type="email" id="editEmail" placeholder="Enter email" required>
+            <button type="submit">Update User</button>
+        </form>
+        <p id="editMessage" style="color: green;"></p>
+    </div>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", addUser);
+        document.getElementById("editForm").addEventListener("submit", updateUser);
+    </script>
+</body>
+</html>
